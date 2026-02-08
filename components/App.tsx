@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { 
   MessageCircle
@@ -9,6 +8,7 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Manifesto from './components/Manifesto';
 import BrandCulture from './components/BrandCulture';
+import BrandValues from './components/BrandValues'; // 新增这一行
 import PainPoints from './components/PainPoints';
 import ServiceMatrix from './components/ServiceMatrix';
 import Process from './components/Process';
@@ -42,6 +42,12 @@ const App: React.FC = () => {
           <BrandCulture />
         </section>
 
+        {/* 新增：品牌使命/願景/理念三卡片布局 */}
+        <section id="brand-values" className="py-32 bg-black">
+          <BrandValues />
+        </section>
+
+        {/* 只保留一个 pain-points 区块（删除重复的） */}
         <section id="pain-points" className="py-32 bg-white">
           <PainPoints />
         </section>
@@ -57,7 +63,7 @@ const App: React.FC = () => {
         <section id="cases" className="py-32 bg-[#020617]">
           <Cases />
         </section>
-
+       {/* 以下保持你原有代码不变 */}
         <section id="media-center" className="py-32 bg-black overflow-hidden">
           <MediaCenter />
         </section>
