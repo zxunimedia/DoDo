@@ -1,54 +1,49 @@
-
-import React, { useRef, useState } from 'react';
-import { Play, Pause, Volume2, VolumeX, Sparkles, Maximize } from 'lucide-react';
+import React from 'react';
 
 const PainPoints: React.FC = () => {
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const [isPlaying, setIsPlaying] = useState(true);
-  const [isMuted, setIsMuted] = useState(true);
-
-  const togglePlay = () => {
-    if (videoRef.current) {
-      if (isPlaying) {
-        videoRef.current.pause();
-      } else {
-        videoRef.current.play();
-      }
-      setIsPlaying(!isPlaying);
-    }
-  };
-
-  const toggleMute = () => {
-    if (videoRef.current) {
-      videoRef.current.muted = !isMuted;
-      setIsMuted(!isMuted);
-    }
-  };
-
   return (
-    <div className="container mx-auto px-10">
-      <div className="mb-24 reveal">
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-gold/40 bg-gold/5 text-gold text-[10px] font-bold tracking-[0.4em] uppercase mb-6 shadow-sm">
-          <Sparkles size={12} /> Brand Vision
+    <section id="pain-points" className="py-32 bg-white">
+      <div className="max-w-7xl mx-auto px-6">
+        {/* 优化后的标签 + 标题（无小白格） */}
+        <div className="mb-12 text-center">
+          <div className="inline-block mb-4 px-6 py-2 rounded-full bg-black/10 border border-yellow-500/20 text-yellow-500 text-sm font-medium tracking-widest">
+            BRAND VISION
+          </div>
+          <h2 className="text-4xl md:text-5xl font-bold text-black leading-tight">
+            為何選擇 
+            <span className="text-yellow-500"> 欣至善</span>？
+          </h2>
         </div>
-        <h3 className="text-5xl md:text-7xl font-bold text-slate-900 leading-tight serif">
-          為何選擇 <span className="text-gold-gradient">欣至善？</span>
-        </h3>
-      </div>
       
-      {/* Video Section */}
-      <div className="relative group rounded-[3rem] overflow-hidden bg-black border border-slate-200 gold-shadow reveal reveal-delay-2 aspect-video md:aspect-[21/9]">
-        <video 
-          ref={videoRef}
-          className="w-full h-full object-cover opacity-90 transition-transform duration-[3000ms] group-hover:scale-105"
-          autoPlay
-          muted
-          loop
-          playsInline
-          src="775399311.636653.MP4"
-        >
-          您的瀏覽器不支援影片播放。
-        </video>
+    {/* 视频展示的黑色区块 */}
+<div className="relative bg-black rounded-2xl overflow-hidden shadow-xl">
+  {/* 视频比例容器（16:9） */}
+  <div className="aspect-video w-full">
+    {/* 替换成你的视频实际路径（注意转义反斜杠） */}
+    <video 
+      src="E:\\ESD-USB\\videos\\品牌願景.mp4"  // Windows路径需转义为双反斜杠
+      controls 
+      className="w-full h-full object-cover"  // 修正为 className
+      poster="可选：视频封面图路径（如E:\\ESD-USB\\images\\video-cover.jpg）"
+    >
+      您的浏览器不支持视频播放
+    </video>
+  </div>
+
+  {/* 视频下方说明文字（可选） */}
+  <div className="p-8 text-white/80">
+    <p className="text-lg">
+      欣至善堅持以專業、誠信、創新的理念，為客戶打造一站式房產服務體驗。
+    </p>
+  </div>
+</div>
+      </div>
+      </div>
+    </section>
+  );
+};
+
+export default PainPoints;
 
         {/* Overlay Gradients */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20 pointer-events-none"></div>
