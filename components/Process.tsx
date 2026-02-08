@@ -69,9 +69,14 @@ const Process: React.FC = () => {
         </div>
       </div>
       
-      <div className="mt-24 text-center reveal reveal-delay-5">
-        <button className="premium-btn px-16 py-6 rounded-full font-black text-lg tracking-[0.2em] shadow-2xl">
-          了解更多流程細節
+      <a 
+  href="https://line.me/R/ti/p/@09341663236" 
+  target="_blank" 
+  rel="noopener noreferrer"
+  className="px-8 py-4 bg-dark-blue rounded-full border border-gold text-white font-bold hover:bg-gold hover:text-dark-blue transition-all"
+>
+        了解更多流程細節
+        </a>
         </button>
       </div>
     </div>
