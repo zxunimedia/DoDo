@@ -104,9 +104,14 @@ const ServiceMatrix: React.FC = () => {
       </div>
 
       <div className="mt-24 text-center reveal">
-        <button className="premium-btn px-16 py-6 rounded-full font-black text-lg tracking-[0.2em] shadow-2xl">
-          預約專屬顧問諮詢
-        </button>
+        <a 
+  href="https://line.me/R/ti/p/@09341663236" 
+  target="_blank" 
+  rel="noopener noreferrer"
+  className="px-8 py-4 bg-dark-blue rounded-full border border-gold text-white font-bold hover:bg-gold hover:text-dark-blue transition-all"
+>
+  預約專屬顧問諮詢
+</a>
       </div>
     </div>
   );
